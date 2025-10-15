@@ -6,13 +6,13 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 07:13:27 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/15 07:15:00 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/15 16:59:54 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int ft_isprint(int c)
 {
     return (c >= 48 && c <= 57);
 }
