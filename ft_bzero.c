@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 11:54:06 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/14 11:54:07 by abdnahal         ###   ########.fr       */
+/*   Created: 2025/10/15 06:47:34 by abdnahal          #+#    #+#             */
+/*   Updated: 2025/10/15 06:50:22 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	*sr;
 
-int ft_toupper(int c);
-int ft_tolower(int c);
-void ft_putendl_fd(char *s, int fd);
-char *ft_strtrim(char const *s1, char const *set);
-char *ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strrchr(const char *s, int c);
-
-#endif
+	sr = (char)s;
+	if (s == NULL)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		sr[i++] = 0;
+	}
+}

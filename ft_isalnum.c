@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 11:54:06 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/14 11:54:07 by abdnahal         ###   ########.fr       */
+/*   Created: 2025/10/15 06:50:59 by abdnahal          #+#    #+#             */
+/*   Updated: 2025/10/15 06:52:54 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-int ft_toupper(int c);
-int ft_tolower(int c);
-void ft_putendl_fd(char *s, int fd);
-char *ft_strtrim(char const *s1, char const *set);
-char *ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strrchr(const char *s, int c);
-
-#endif
+int	ft_isalnum(int c)
+{
+	return (ft_isalpha(c) && ft_isdigit(c));
+}
