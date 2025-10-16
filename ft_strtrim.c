@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:20:16 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/14 11:40:10 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/16 13:34:17 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	i = 0;
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	while (is_in(set, s1[i]))
 	{
 		i++;

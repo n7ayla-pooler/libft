@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:43:06 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/14 12:03:09 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/16 13:58:08 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 	char *p;
 	cr = (char)c;
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	while (s[i++])
 	{
 		if (s[i] == cr)
