@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:10:17 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/17 10:21:38 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/17 17:38:23 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	while (s1[i])
-		join[i++] = s1[i++];
+	{
+		join[i] = s1[i];
+		i++;
+	}
 	j = 0;
 	while (s2[j])
-		join[i++] = s2[j++];
+	{
+		join[i] = s2[j];
+		i++;
+		j++;
+	}
 	join[i] = '\0';
 	return (join);
 }

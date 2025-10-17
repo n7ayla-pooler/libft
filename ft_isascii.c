@@ -6,13 +6,13 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 07:11:42 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/15 07:14:09 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/17 17:16:39 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    return (c >= 0 && c <= 255);    
+	return (c >= 0 && c <= 255);
 }

@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 08:55:58 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/15 16:30:28 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/17 13:14:45 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	nbrlen(int nbr)
 	int	count;
 
 	count = 0;
+	if (nbr == 0)
+		count++;
 	if (nbr < 0)
 	{
 		count++;
@@ -45,6 +47,8 @@ char	*ft_itoa(int nbr)
 		nptr[0] = '-';
 		nbr = -nbr;
 	}
+	else if (nbr == 0)
+		nptr[0] = '0';
 	while (nbr != 0)
 	{
 		nptr[i] = (nbr % 10) + '0';

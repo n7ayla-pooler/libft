@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 18:11:58 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/16 18:36:15 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/17 10:51:45 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*str;
+	size_t			i;
 
+	i = 0;
 	str = (unsigned char *)s;
 	while (n--)
 	{
-		*str = (unsigned char)c;
-		str++;
+		str[i] = (unsigned char)c;
+		i++;
 	}
 	return (s);
 }
