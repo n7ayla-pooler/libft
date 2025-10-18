@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	cr;
 	int		i;
-	char 	*str;
+	char	*str;
 
 	str = (char *)s;
 	cr = (char)c;
@@ -30,7 +30,5 @@ char	*ft_strrchr(const char *s, int c)
 			return (&str[i]);
 		}
 	}
-	
 	return (NULL);
 }
-
