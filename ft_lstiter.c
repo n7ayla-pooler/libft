@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 10:20:33 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/20 18:58:07 by abdnahal         ###   ########.fr       */
+/*   Created: 2025/10/20 18:26:24 by abdnahal          #+#    #+#             */
+/*   Updated: 2025/10/20 18:28:42 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void    ft_lstiter(t_list *lst, void (*f)(void *))
 {
     t_list *curr;
-    t_list *other;
-    int count;
-    
-    curr = lst;
+
     if (!lst)
-        return (NULL);
-    count = ft_lstsize(lst);
-    while (count--)
+        return ;
+    curr = lst;
+    while (curr)
     {
-        other = ft_lstnew(f(curr->content));
+        f(curr->content);
+        curr = curr->next;
     }
-    
 }
