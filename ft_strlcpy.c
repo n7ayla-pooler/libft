@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:49:16 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/17 10:09:59 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/19 14:32:40 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		return (0);
 	len_src = ft_strlen(src);
 	i = 0;
-	while (src[i] && i < size - 1)
+	while (src[i] && i < (size - 1))
 	{
 		dst[i] = src[i];
 		i++;

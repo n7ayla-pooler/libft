@@ -16,11 +16,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	cr;
 	size_t	i;
-    char *str;
+	char	*str;
 
 	cr = (char)c;
 	str = (char *)s;
-    i = 0;
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] == cr)

@@ -6,13 +6,13 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 07:16:48 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/17 17:16:32 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/19 13:30:39 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_ispint(int c)
 {
-	return (c >= 32 && c <= 127);
+	return (c >= 32 && c < 127);
 }

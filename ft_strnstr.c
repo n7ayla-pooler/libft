@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:00:54 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/16 16:32:09 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/19 13:12:22 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] && len--)
 	{
 		k = 0;
-		while (little[k] && big[i] && little[k] == big[i])
+		while (little[k] && big[i] && little[k] == big[i] && len)
 		{
 			k++;
 			i++;
