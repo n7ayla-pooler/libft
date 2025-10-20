@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:20:16 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/19 14:35:44 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/16 13:34:17 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	is_in(char const *str, char c)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
-	size_t	j;
+	int		j;
 	char	*str;
 
 	i = 0;
@@ -41,13 +41,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		i++;
 	}
-	j = 0;
-	while (!is_in(set, s1[i]))
+	j = ft_strlen(s1);
+	while (j >= 0 && is_in(set, s1[j]))
 	{
-		j++;
-		i++;
+		j--;
 	}
-	str = ft_substr(s1, i - j, j);
+	str = ft_substr(s1, i, j - i + 1);
 	if (str == NULL)
 	{
 		return (NULL);
