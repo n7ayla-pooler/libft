@@ -6,27 +6,51 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 10:20:33 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/20 18:58:07 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/21 09:23:46 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static t_list   *lst_creator(int size)
+{
+    t_list *curr;
+    t_list *head;
+    t_list *temp;
+    
+    curr = malloc(sizeof(t_list));
+    if (!curr)
+        return (NULL);
+    head = curr;
+    while (size--)
+    {
+        temp = malloc(sizeof(t_list));
+        if (!temp)
+            return (NULL);
+        curr->next = temp;
+        curr = curr->next;
+    }
+    curr->next = NULL;
+    return (head);
+}
 
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
     t_list *curr;
-    t_list *other;
-    int count;
+    t_list *copy;
+    t_list *head;
+    int     size;
     
     curr = lst;
-    if (!lst)
-        return (NULL);
-    count = ft_lstsize(lst);
-    while (count--)
+    copy = lst_creator(size);
+    head = copy;
+    size = ft_lstsize(lst);
+    while (curr)
     {
-        other = ft_lstnew(f(curr->content));
+        copy->content = f(curr->content);
+        copy = copy->next;
+        curr = curr->next;
     }
-    
+    return (head);
 }
