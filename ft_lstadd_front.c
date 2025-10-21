@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 10:30:20 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/20 18:07:25 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:31:56 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!(*lst) || !new)
+	if (!lst || !(*lst) || !new)
 		return ;
 	new->next = *lst;
 }

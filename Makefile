@@ -4,8 +4,14 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isascii.c ft_isdigit.c f
 OBJS = $(SRCS:.c=.o)
 NAME = libft.a
 HEADER = libft
+B_SRCS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+B_OBJS = $(B_SRCS:.c=.o)
+
 
 all : $(NAME)
+
+bonus : $(B_OBJS)
+	ar rcs $(NAME) $(B_OBJS)
 
 $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
@@ -14,11 +20,11 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
 
 clean :
-	$(RM) -rf $(OBJS)
+	$(RM) -rf $(OBJS) $(B_OBJS)
 
 fclean : clean
 	$(RM) -rf $(NAME)
 
 re : fclean all 
 
-
+.SECONDARY: $(OBJS) 
