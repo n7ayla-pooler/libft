@@ -26,5 +26,3 @@ fclean : clean
 	$(RM) -rf $(NAME)
 
 re : fclean all 
-
-.SECONDARY: $(OBJS) 

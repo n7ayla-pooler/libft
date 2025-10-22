@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 06:47:34 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/17 11:01:59 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/21 17:35:53 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	ft_bzero(void *s, size_t n)
 	char	*sr;
 
 	sr = (char *)s;
-	if (s == NULL)
-		return ;
 	i = 0;
 	while (i < n)
 	{

@@ -6,13 +6,14 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:54:06 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/20 18:05:35 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/22 10:03:51 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <bsd/string.h>
 # include <fcntl.h>
 # include <stdint.h>
 # include <stdio.h>

@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 06:53:32 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/21 14:57:59 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/22 10:07:29 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int	ft_atoi(const char *nptr)
 {
 	int i, (sign), (nbr);
-	if (!nptr)
-		return (0);
 	i = 0;
 	sign = 1;
 	nbr = 0;
