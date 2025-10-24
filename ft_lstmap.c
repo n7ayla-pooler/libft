@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 10:20:33 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/21 14:50:35 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/24 13:05:03 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static t_list	*lst_creator(int size)
 	if (!curr)
 		return (NULL);
 	head = curr;
-	while (size--)
+	while (--size)
 	{
 		temp = malloc(sizeof(t_list));
 		if (!temp)

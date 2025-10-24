@@ -19,8 +19,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start > len)
+	if (start > ft_strlen(s))
 		return (ft_strdup(""));
+	if (len > ft_strlen(&s[start]))
+		len = ft_strlen(&s[start]);
 	sub = malloc(len + 1);
 	if (!sub)
 		return (NULL);
@@ -33,8 +35,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-int main()
-{
-	char *s = ft_substr("42", 0, 0);
-	printf("%s\n", s);
-}
+// int main()
+// {
+// 	char *s = ft_substr("42", 0, 0);
+// 	printf("%s\n", s);
+// }

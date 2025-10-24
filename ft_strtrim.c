@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	is_in(char const *str, char c)
+int	is_in(char c, char const *str)
 {
 	int	i;
 
@@ -25,31 +25,29 @@ int	is_in(char const *str, char c)
 		}
 		i++;
 	}
-	if (c == str[i])
-		return (1);
 	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
+	size_t	i;
 	int		j;
 	char	*str;
 
 	i = 0;
+	j = ft_strlen(s1) - 1;
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	while (s1[i] && is_in(set, s1[i]))
+	while (s1[i] && is_in(s1[i], set))
 	{
 		i++;
 	}
-	j = ft_strlen(s1) - 1;
-	while (j >= 0 && is_in(set, s1[j]))
+	if (i == ft_strlen(s1))
+		return (ft_strdup(""));
+	while (j >= 0 && is_in(s1[j], set))
 	{
 		j--;
 	}
-	if (j < i)
-		return (ft_strdup(""));
 	str = ft_substr(s1, i, j - i + 1);
 	if (str == NULL)
 	{

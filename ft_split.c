@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 09:03:23 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/24 09:05:25 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/24 11:19:40 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,16 @@ int	count_letters(char const *s, char c)
 	return (i);
 }
 
-char	**fill_arr(char const *s, char c, int a, int i, int j)
+char	**fill_arr(char const *s, char c, int a, int i)
 {
 	char	**arr;
 
-	int k;
+	int k, (j);
 	k = count_words(s, c);
 	arr = malloc(sizeof(char *) * (k + 1));
 	if (!arr)
 		return (NULL);
+	j = 0;
 	while (a < k)
 	{
 		while (s[j] && s[j] == c)
@@ -83,7 +84,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 
-	arr = fill_arr(s, c, 0, 0, 0);
+	arr = fill_arr(s, c, 0, 0);
 	if (!arr)
 	{
 		free_all(arr);
