@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:20:16 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/22 10:24:30 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/23 10:09:43 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,21 @@ int	is_in(char const *str, char c)
 		}
 		i++;
 	}
+	if (c == str[i])
+		return (1);
 	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
+	int		i;
 	int		j;
 	char	*str;
 
 	i = 0;
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	while (is_in(set, s1[i]))
+	while (s1[i] && is_in(set, s1[i]))
 	{
 		i++;
 	}
@@ -46,6 +48,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		j--;
 	}
+	if (j < i)
+		return (ft_strdup(""));
 	str = ft_substr(s1, i, j - i + 1);
 	if (str == NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 10:51:18 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/18 10:55:26 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/22 10:50:43 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ char	*ft_strchr(const char *s, int c)
 			return (&str[i]);
 		i++;
 	}
+	if (cr == str[i])
+		return (&str[i]);
 	return (NULL);
 }

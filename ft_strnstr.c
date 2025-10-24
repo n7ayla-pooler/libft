@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 14:00:54 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/22 10:07:21 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:51:15 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i, (k);
+	unsigned int i, (k);
+	if (len == 0)
+		return (0);
 	if (!(*little) || !len)
 		return ((char *)big);
 	if (big == little)

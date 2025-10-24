@@ -10,9 +10,11 @@ B_OBJS = $(B_SRCS:.c=.o)
 
 all : $(NAME)
 
-bonus : $(B_OBJS)
-	ar rcs $(NAME) $(B_OBJS)
+bonus : .bonus
 
+.bonus : $(B_OBJS)
+		ar rcs $(NAME) $(B_OBJS)
+		@touch .bonus
 $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 

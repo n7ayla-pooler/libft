@@ -5,94 +5,89 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 13:19:59 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/15 00:17:58 by abdnahal         ###   ########.fr       */
+/*   Created: 2025/10/24 09:03:23 by abdnahal          #+#    #+#             */
+/*   Updated: 2025/10/24 09:05:25 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char const *str, char c)
+void	free_all(char **arr)
 {
-	int i, (count);
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
+int	count_words(char const *s, char c)
+{
+	int	i;
+	int	count;
+
 	i = 0;
 	count = 0;
-	while (str[i])
-	{
-		while (str[i] == c)
-		{
-			i++;
-		}
-		if (str[i] && str[i] != c)
-		{
-			count++;
-		}
-		while (str[i] && str[i] != c)
-		{
-			i++;
-		}
-	}
-	return (count);
-}
-
-char	**alloc_all(char const *s, char c)
-{
-	char	**arr;
-
-	int i, (k), (count);
-	arr = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (arr == NULL)
-		return (NULL);
-	i = 0;
-	k = 0;
-	while (s[i])
-	{
-		while (s[i++] && s[i++] == c)
-		{
-		}
-		count = 0;
-		while (s[i++] && s[i++] != c)
-		{
-			count++;
-		}
-		arr[k] = malloc(count + 1);
-		if (arr[k] == NULL)
-			return (NULL);
-		k++;
-	}
-	return (arr);
-}
-
-void	fill_arr(char **arr, char const *s, char c)
-{
-	int i, (k), (j);
-	i = 0;
-	k = 0;
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		j = 0;
+		if (s[i] && s[i] != c)
+			count++;
 		while (s[i] && s[i] != c)
-		{
-			arr[k][j++] = s[i++];
-		}
-		arr[k][j] = '\0';
-		if (j != 0)
-			k++;
+			i++;
 	}
-	arr[k] = NULL;
+	return (count);
+}
+
+int	count_letters(char const *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
+}
+
+char	**fill_arr(char const *s, char c, int a, int i, int j)
+{
+	char	**arr;
+
+	int k;
+	k = count_words(s, c);
+	arr = malloc(sizeof(char *) * (k + 1));
+	if (!arr)
+		return (NULL);
+	while (a < k)
+	{
+		while (s[j] && s[j] == c)
+			j++;
+		arr[a] = malloc(sizeof(char) * (count_letters(&s[j], c) + 1));
+		if (!arr[a])
+			return (NULL);
+		i = count_letters(&s[j], c);
+		ft_strlcpy(arr[a], &s[j], i + 1);
+		j += count_letters(&s[j], c);
+		a++;
+	}
+	arr[a] = NULL;
+	return (arr);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 
-	arr = alloc_all(s, c);
-	if (arr == NULL)
+	arr = fill_arr(s, c, 0, 0, 0);
+	if (!arr)
 	{
+		free_all(arr);
 		return (NULL);
 	}
-	fill_arr(arr, s, c);
 	return (arr);
 }

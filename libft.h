@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:54:06 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/22 10:03:51 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/22 10:54:43 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ int					ft_tolower(int c);
 void				ft_putendl_fd(char *s, int fd);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
+char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_atoi(const char *nptr);
+char				**ft_split(char const *s, char c);
 char				*ft_itoa(int nbr);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
