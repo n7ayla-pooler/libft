@@ -6,21 +6,21 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:54:06 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/24 11:38:33 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/25 10:19:56 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <bsd/string.h>
+// # include <bsd/string.h>
 # include <fcntl.h>
+# include <limits.h>
 # include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <limits.h>
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 09:03:23 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/24 11:19:40 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/25 10:14:03 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 
+	if (!s)
+		return (NULL);
 	arr = fill_arr(s, c, 0, 0);
 	if (!arr)
 	{
