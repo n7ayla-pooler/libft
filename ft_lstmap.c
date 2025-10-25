@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 10:20:33 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/25 10:36:13 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/25 17:15:34 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*curr;
 	t_list	*head;
 	void	*cont;
-	
+
 	if (!lst || !f || !del)
 		return (NULL);
 	head = NULL;
