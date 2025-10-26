@@ -6,7 +6,7 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 06:53:32 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/22 10:07:29 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/26 09:37:21 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,11 @@ int	ft_atoi(const char *nptr)
 	}
 	return (nbr * sign);
 }
+
+// int main()
+// {
+// 	const char *str = "   -12345abc";
+// 	int result = ft_atoi(str);
+// 	printf("The converted integer is: %d\n", result);
+// 	return (0);
+// }

@@ -6,18 +6,18 @@
 /*   By: abdnahal <abdnahal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 09:03:23 by abdnahal          #+#    #+#             */
-/*   Updated: 2025/10/25 10:14:03 by abdnahal         ###   ########.fr       */
+/*   Updated: 2025/10/25 18:20:07 by abdnahal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_all(char **arr)
+static void	free_all(char **arr, int a)
 {
 	int	i;
 
 	i = 0;
-	while (arr[i])
+	while (i < a)
 	{
 		free(arr[i]);
 		i++;
@@ -25,7 +25,7 @@ void	free_all(char **arr)
 	free(arr);
 }
 
-int	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -44,7 +44,7 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-int	count_letters(char const *s, char c)
+static int	count_letters(char const *s, char c)
 {
 	int	i;
 
@@ -54,7 +54,7 @@ int	count_letters(char const *s, char c)
 	return (i);
 }
 
-char	**fill_arr(char const *s, char c, int a, int i)
+static char	**fill_arr(char const *s, char c, int a, int i)
 {
 	char	**arr;
 
@@ -70,7 +70,10 @@ char	**fill_arr(char const *s, char c, int a, int i)
 			j++;
 		arr[a] = malloc(sizeof(char) * (count_letters(&s[j], c) + 1));
 		if (!arr[a])
+		{
+			free_all(arr, a);
 			return (NULL);
+		}
 		i = count_letters(&s[j], c);
 		ft_strlcpy(arr[a], &s[j], i + 1);
 		j += count_letters(&s[j], c);
@@ -87,10 +90,13 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	arr = fill_arr(s, c, 0, 0);
-	if (!arr)
-	{
-		free_all(arr);
-		return (NULL);
-	}
 	return (arr);
 }
+
+// int main()
+// {
+// 	char **arr = ft_split("      split       this for   me  !    h ", ' ');
+// 	printf("%s\n", arr[5]);
+// 	free(arr[0]);
+// 	free(arr);
+// }
